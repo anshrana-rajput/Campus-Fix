@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Fix</title>
+    <style>
+      body { font-family: Arial, sans-serif; margin: 20px; background: #f6f8fa; }
+      h1 { margin-bottom: 10px; }
+      .layout { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+      .card { background: #fff; padding: 16px; border-radius: 8px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.08); }
+      input, textarea, button, select { width: 100%; margin: 6px 0; padding: 8px; box-sizing: border-box; }
+      .issue { border: 1px solid #e5e7eb; border-radius: 6px; padding: 10px; margin: 10px 0; }
+      .meta { color: #4b5563; font-size: 13px; }
+      .sev-low { color: #047857; }
+      .sev-medium { color: #b45309; }
+      .sev-high { color: #b91c1c; font-weight: 700; }
+      @media (max-width: 800px) { .layout { grid-template-columns: 1fr; } }
+    </style>
+  </head>
+  <body>
+    <h1>Campus Fix</h1>
+    <p>Report campus issues. AI classifies severity, and managers update status in real time.</p>
+
+    <div class="layout">
+      <section class="card">
+        <h2>Report an Issue</h2>
+        <form id="issue-form">
+          <input id="title" placeholder="Issue title (e.g. Broken seat)" />
+          <textarea id="description" placeholder="Describe the issue" rows="4"></textarea>
+          <input id="location" placeholder="Location (e.g. Room 204)" />
+          <button type="submit">Submit Issue</button>
+        </form>
+        <p id="submit-message"></p>
+      </section>
+
+      <section class="card">
+        <h2>Manager Dashboard (Live)</h2>
+        <div id="issues"></div>
+      </section>
+    </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/app.js"></script>
+  </body>
+</html>

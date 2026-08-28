@@ -1,0 +1,21 @@
+{
+  "name": "campus-fix",
+  "version": "1.0.0",
+  "description": "Campus issue reporting website with AI severity and live manager status updates",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://localhost:26831/anshrana-rajput/Campus-Fix"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.2.1",
+    "socket.io": "^4.8.3"
+  }
+}
